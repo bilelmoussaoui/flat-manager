@@ -154,7 +154,7 @@ pub struct Variant {
 }
 
 impl Variant {
-    fn new(type_string: String, data: Vec<u8>) -> OstreeResult<Variant> {
+    pub fn new(type_string: String, data: Vec<u8>) -> OstreeResult<Variant> {
         match type_string_element_len(&type_string) {
             None => {
                 return Err(OstreeError::InternalError(format!("Invalid type string '{}'", type_string)));
